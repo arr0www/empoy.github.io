@@ -1,0 +1,15 @@
+{% load socialaccount %}
+<html>
+<body>
+<h1>My Google OAuth Project </h1>
+{% if user.is_authenticated %}
+  <p>Welcome, You are logged in as {{ user.username }}</p>
+
+<a href="logout">Logout</p>
+{% else %}
+  <a href="{% provider_login_url 'google' %}">Login With Google</a>
+  <a href="{% provider_login_url 'instagram' %}">Login With Instagram</a>
+  <a href="{% provider_login_url 'twitter' %}">Login with Twitter</a>
+{% endif %}
+</body>
+</html>
